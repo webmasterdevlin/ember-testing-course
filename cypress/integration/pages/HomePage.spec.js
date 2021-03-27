@@ -1,6 +1,6 @@
 /// <reference types="cypress"/>
 
-describe('Home Page', () => {
+describe.only('Home Page', () => {
   beforeEach(() => {
     cy.LoginCommand();
   });
@@ -18,5 +18,18 @@ describe('Home Page', () => {
       cy.get('[data-testid=your-feed-container]').should('be.visible');
     });
   });
-  context('Global Feed', () => {});
+  context('Global Feed', () => {
+    it('should navigate to article', () => {
+      cy.get('[data-testid=nav-article-post]').eq(0).click();
+      cy.get('[data-testid=article-title]').should('not.be.null');
+    });
+
+    it('should navigate to 404 page', () => {
+      cy.visit('/articles/48qgauiflg747gtf47g');
+      cy.get('[data-testid=sorry-message]').should(
+        'contain',
+        'Sorry but that page does not exist.',
+      );
+    });
+  });
 });

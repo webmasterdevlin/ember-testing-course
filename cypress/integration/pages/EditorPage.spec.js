@@ -1,6 +1,6 @@
 /// <reference types="cypress"/>
 
-describe.only('Editor Page', () => {
+describe('Editor Page', () => {
   beforeEach(() => {
     cy.LoginCommand();
   });
