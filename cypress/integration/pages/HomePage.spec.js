@@ -1,6 +1,6 @@
 /// <reference types="cypress"/>
 
-describe.only('Home Page', () => {
+describe('Home Page', () => {
   beforeEach(() => {
     cy.LoginCommand();
   });

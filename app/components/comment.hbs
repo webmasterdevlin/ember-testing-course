@@ -1,6 +1,6 @@
 <div class="card" data-test-article-comment>
   <div class="card-block">
-    <p class="card-text" data-test-article-comment-body>{{@comment.body}}</p>
+    <p data-testid="comment-body" class="card-text" data-test-article-comment-body>{{@comment.body}}</p>
   </div>
   <div class="card-footer">
     <LinkTo @route="profile" @model={{@comment.author.id}} class="comment-author">
