@@ -14,7 +14,7 @@ describe('Articles Page', () => {
       cy.get('[data-testid=nav-article-post]').eq(0).click();
       cy.get('[data-testid=comment-textarea]').type('hello');
       cy.get('[data-testid=post-comment-button]').click();
-      cy.get('[data-testid=comment-body]').contains('hello');
+      cy.get('[data-testid=comment-body]').eq(0).contains('hello');
     });
   });
 });
